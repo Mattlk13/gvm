@@ -173,7 +173,9 @@ download_binary() {
 	if [ "$(uname -m)" == "x86_64" ]; then
 		GVM_ARCH="amd64"
 	elif [ "$(uname -m)" == "ppc64le" ]; then
-		GVM_ARCH="ppc64le"
+	        GVM_ARCH="ppc64le"
+	elif [ "$(uname -m)" == "aarch64" ]; then
+      	        GVM_ARCH="arm64"
 	else
 		GVM_ARCH="386"
 	fi
@@ -185,7 +187,10 @@ download_binary() {
 	else
 		GO_BINARY_FILE=${VERSION}.${GVM_OS}-${GVM_ARCH}.tar.gz
 	fi
-	GO_BINARY_URL="https://storage.googleapis.com/golang/${GO_BINARY_FILE}"
+	# `GO_BINARY_BASE_URL` env allow user setting base URL for binaries
+	# download, e.g. "https://dl.google.com/go".
+	GO_BINARY_BASE_URL=${GO_BINARY_BASE_URL:-"https://storage.googleapis.com/golang"}
+	GO_BINARY_URL="${GO_BINARY_BASE_URL}/${GO_BINARY_FILE}"
 	GO_BINARY_PATH=${GVM_ROOT}/archive/${GO_BINARY_FILE}
 
 	if [ ! -f $GO_BINARY_PATH ]; then

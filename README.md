@@ -2,7 +2,11 @@
 
 [![Build Status](https://travis-ci.org/moovweb/gvm.svg?branch=master)](https://travis-ci.org/moovweb/gvm)
 
-by Josh Bussdieker (jbuss, jaja, jbussdieker) while working at [Moovweb](https://www.moovweb.com)
+By Josh Bussdieker (jbuss, jaja, jbussdieker) while working at [Moovweb](https://www.moovweb.com)
+
+Currently lovingly maintained by [Benjamin Knigge](https://github.com/BenKnigge)
+
+Pull requests and other any other contributions would be very much appreciated.
 
 GVM provides an interface to manage Go versions.
 
@@ -164,3 +168,5 @@ See examples/native for a working example.
 Troubleshooting
 ===============
 Sometimes especially during upgrades the state of gvm's files can get mixed up. This is mostly true for upgrade from older version than 0.0.8. Changes are slowing down and a LTR is imminent. But for now `rm -rf ~/.gvm` will always remove gvm. Stay tuned!
+
+[![Gitter](https://badges.gitter.im/GoVesionManager/community.svg)](https://gitter.im/GoVesionManager/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
